@@ -43,23 +43,30 @@ while running:
                 particle.COLLIDE(other)
                 PARTICLE_COLOR = (0, 0, 0)
 
-    FONT_ = pygame.font.Font(None, 25)
-
     travellingVelocity = constants.PARTICLE_INITIAL_VELOCITY
     if particle.UPDATE_VEL(other) >= 10:
         travellingVelocity = particle.UPDATE_VEL(other)
     else:
         travellingVelocity = 0
 
+    # Some small Variables
+    FONT_ = pygame.font.Font(None, 25)
+    marker = "↑" if travellingVelocity > 0 else "↓"
+
     # Updates label
     INITIAL_VELOCITY = FONT_.render("Initial Set Velocity : " + str("±") + str(constants.PARTICLE_INITIAL_VELOCITY), True, constants.FONT_COLOR)
     AFTER_COLLISION = FONT_.render("Velocity after collision : " + str(particle.UPDATE_VEL(other)) + "m/s", True, constants.FONT_COLOR)
-    FREE_MOVING_VELOCITY = FONT_.render("Travelling Velocity : " + str(f"({travellingVelocity})m/s & greater"), True, constants.FONT_COLOR)
+    FREE_MOVING_VELOCITY = FONT_.render("Particle Velocity : " + str(f"({particle.VELOCITY()})m/s"), True, constants.FONT_COLOR)
     PARTICLE_COUNT_LABEL = FONT_.render("Particle Count : " + str(constants.PARTICLE_COUNT), True, constants.FONT_COLOR)
+    VEL_GAIN = FONT_.render("Velocity Gain : " + str(f"{particle.VELOCITY_GAIN(other)}m/s"), True, constants.FONT_COLOR)
+    PARTICLE_RAD = FONT_.render("Particle Radius : " + str(constants.PARTICLE_RADIUS), True, constants.FONT_COLOR)
 
     # Draw label
     screen.blit(INITIAL_VELOCITY, (25, 25))
     screen.blit(PARTICLE_COUNT_LABEL, (25, 50))
+    screen.blit(PARTICLE_RAD, (25, 75))
+
+    screen.blit(VEL_GAIN, (25, 700))
     screen.blit(FREE_MOVING_VELOCITY, (25, 725))
     screen.blit(AFTER_COLLISION, (25, 750))
 

@@ -85,7 +85,12 @@ class Particle:
             other.vx = vx1 * cos_angle + vy2 * sin_angle
             other.vy = vy2 * cos_angle - vx1 * sin_angle
 
-            if vx1 - vy2 and vx2 - vy1 > 0:
-                return round(vx1 - vy2, 2)
-            else:
-                return 0
+            # Return the change in velocity
+            updated_ = round(vx1 - vy2, 2)
+            return updated_
+
+    def VELOCITY(self):
+        return round((self.vx ** 2 + self.vy ** 2) ** 0.5, 2)
+
+    def VELOCITY_GAIN(self, other):
+        return round(self.UPDATE_VEL(other) / self.VELOCITY(), 2)
