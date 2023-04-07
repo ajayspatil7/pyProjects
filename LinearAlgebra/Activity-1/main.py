@@ -45,23 +45,23 @@ while running:
 
     FONT_ = pygame.font.Font(None, 25)
 
-    x = 0
+    travellingVelocity = constants.PARTICLE_INITIAL_VELOCITY
     if particle.UPDATE_VEL(other) >= 10:
-        x = 10
+        travellingVelocity = particle.UPDATE_VEL(other)
     else:
-        x = 0
+        travellingVelocity = 0
 
-    # Update label
+    # Updates label
     INITIAL_VELOCITY = FONT_.render("Initial Set Velocity : " + str("±") + str(constants.PARTICLE_INITIAL_VELOCITY), True, constants.FONT_COLOR)
     AFTER_COLLISION = FONT_.render("Velocity after collision : " + str(particle.UPDATE_VEL(other)) + "m/s", True, constants.FONT_COLOR)
-    FREE_MOVING_VELOCITY = FONT_.render("Travelling Velocity : " + str(f"({x})m/s & greater"), True, constants.FONT_COLOR)
+    FREE_MOVING_VELOCITY = FONT_.render("Travelling Velocity : " + str(f"({travellingVelocity})m/s & greater"), True, constants.FONT_COLOR)
     PARTICLE_COUNT_LABEL = FONT_.render("Particle Count : " + str(constants.PARTICLE_COUNT), True, constants.FONT_COLOR)
 
     # Draw label
-    screen.blit(AFTER_COLLISION, (25, 750))
     screen.blit(INITIAL_VELOCITY, (25, 25))
-    screen.blit(FREE_MOVING_VELOCITY, (25, 725))
     screen.blit(PARTICLE_COUNT_LABEL, (25, 50))
+    screen.blit(FREE_MOVING_VELOCITY, (25, 725))
+    screen.blit(AFTER_COLLISION, (25, 750))
 
     # Update screen
     pygame.display.flip()
