@@ -1,3 +1,5 @@
+import time
+
 import pygame
 import random
 import math
@@ -13,8 +15,8 @@ PARTICLE_COLLISION_DISTANCE = 2 * PARTICLE_RADIUS
 BOUNDARY_WIDTH = 25
 BACKGROUND_COLOR = (255, 255, 255)
 PARTICLE_COLOR = (0, 0, 255)
-BOUNDARY_COLOR = (255, 0, 0)
-FONT_COLOR = (30, 31, 41)
+BOUNDARY_COLOR = (23, 35, 200)
+FONT_COLOR = (56, 130, 180)
 FONT_ = pygame.font.Font(None, 25)
 
 
@@ -83,9 +85,10 @@ class Particle:
             other.vx = vx1 * cos_angle + vy2 * sin_angle
             other.vy = vy2 * cos_angle - vx1 * sin_angle
 
-            x = round(other.vx, 2)
-            y = round(other.vy, 2)
-            if round(other.vx, 2) and round(other.vy, 2) > 0 or -0:
-                return (other.vx, other.vy)
+            x = round(self.vx, 2)
+            y = round(self.vy, 2)
+            if round(self.vx, 2) > 0 or -0:
+                if round(self.vy, 2) > 0 or -0:
+                    return (self.vx, self.vy)
             else:
-                return None
+                return (random.uniform(0, 2), random.uniform(0, 2))

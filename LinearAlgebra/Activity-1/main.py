@@ -7,7 +7,7 @@ from constants import Particle
 # Set up Pygame
 pygame.init()
 screen = pygame.display.set_mode((800, 600))
-pygame.display.set_caption("Particle Animation")
+pygame.display.set_caption("N-Particle Simulation with Collision")
 
 
 # Create particles
@@ -44,7 +44,7 @@ while running:
     FONT_ = pygame.font.Font(None, 25)
 
     # Update label
-    label = FONT_.render("Particle Speed: " + str(particle.updateVelocity(other)), True, constants.FONT_COLOR)
+    label = FONT_.render("Speed after collision : " + str(particle.updateVelocity(other)), True, constants.FONT_COLOR)
 
     # Draw label
     screen.blit(label, (25, 25))
