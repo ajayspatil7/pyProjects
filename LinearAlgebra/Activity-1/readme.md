@@ -3,12 +3,12 @@
 A particle simulation program implemented in Python using the Pygame library.
 
 ## Table of Contents
-- <b> Installation
+- Installation
 - Usage
 - Features
 - Contributing
 - License
-</b>
+
 
 ## Installation
 
@@ -18,7 +18,7 @@ A particle simulation program implemented in Python using the Pygame library.
 
 ## Usage
 
-Upon starting the program, a window will appear with particles bouncing around inside it. The particles will collide with each other and with the boundaries of the window. You can adjust the number of particles, the size of the particles, and other settings in the `settings.py` file.
+Upon starting the program, a window will appear with particles bouncing around inside it. The particles will COLLIDE with each other and with the boundaries of the window. You can adjust the number of particles, the size of the particles, and other settings in the `settings.py` file.
 
 ## Features
 
