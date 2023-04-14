@@ -1,3 +1,5 @@
+# Copyright © 2023 AJAY S PATIL
+
 # Necessary libraries
 import numpy as np
 
