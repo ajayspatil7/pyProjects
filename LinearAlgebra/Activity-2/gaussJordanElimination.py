@@ -18,16 +18,11 @@ import numpy as np
         Replace all the old R3 elements with new R3 values.
     """
 
-argumented_matrix = np.array([[1, 1, 2, 1, 2],
-                              [1, 4, -1, 2, 1],
-                              [3, -2, 1, 3, 4],
-                              [-1, -1, 3, 1, 2],
-                              [2, 3, 4, 4, -1]])
-equations_constant = np.array([[15],
-                              [8],
-                              [22],
-                              [5],
-                              [30]])
+argumented_matrix = np.array([[1, 1, 2, 1, 2, 15],
+                              [1, 4, -1, 2, 1, 8],
+                              [3, -2, 1, 3, 4, 22],
+                              [-1, -1, 3, 1, 2, 5],
+                              [2, 3, 4, 4, -1, 30]])
 
 
 # convert the matrix to row-echlon form
@@ -70,7 +65,7 @@ def gauss_jordan_elemination(reducedMatrix: list) -> list:
 
 
 REC_FORM = row_echelon_form(argumented_matrix)
-EQC_CONST = row_echelon_form_e(equations_constant)
+#EQC_CONST = row_echelon_form_e(equations_constant)
 GAUSS_JORD = gauss_jordan_elemination(REC_FORM)
 print(GAUSS_JORD)
 
