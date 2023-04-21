@@ -65,7 +65,6 @@ def gauss_jordan_elemination(reducedMatrix: list) -> list:
 
 
 REC_FORM = row_echelon_form(argumented_matrix)
-#EQC_CONST = row_echelon_form_e(equations_constant)
 GAUSS_JORD = gauss_jordan_elemination(REC_FORM)
 print(GAUSS_JORD)
 
