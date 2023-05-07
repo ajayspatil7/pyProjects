@@ -50,7 +50,6 @@ def inverseOfMatrix(matrix: np.array) -> list:
 
 matrix = np.array([15, -9, -23, 33, 11])
 matrix = matrix.reshape(5, 1)
-
 matrix_1 = []
 
 gaussElemination = gauss_jordan_elemination(matrix)
