@@ -8,8 +8,6 @@ Given two matrices A and B, write a program to compute:
 3. 2A + 5B
 4. AT
 5. A−1, B−1,(AB)−1
-
-
 """
 
 import numpy as np
@@ -52,12 +50,12 @@ matrix2 = np.array([
         [1, -1, 2, 0, 1]
     ])
 
-print(matrix_operations(matrix1, matrix2, "add"))
-print(matrix_operations(matrix1, matrix2, "scalar"))
-print(matrix_operations(matrix1, matrix2, "prod"))
-print(matrix_operations(matrix1, matrix2, "add"))
-print(matrix_operations(matrix1, matrix2, "transpose"))
-print(matrix_operations(matrix1, matrix2, "inverse"))
+print(matrix_operations(matrix1, matrix2, 'add'))
+print(matrix_operations(matrix1, matrix2, 'scalar'))
+print(matrix_operations(matrix1, matrix2, 'prod'))
+print(matrix_operations(matrix1, matrix2, 'add'))
+print(matrix_operations(matrix1, matrix2, 'transpose'))
+print(matrix_operations(matrix1, matrix2, 'inverse'))
 
 
 
