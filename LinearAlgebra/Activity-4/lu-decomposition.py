@@ -41,11 +41,43 @@ def lu_decomposition(matrix: np.array) -> list:
     return matrix
 
 
+def reShappingMatrix(matrix: np.array):
+
+    rows = 2
+    cols = 2
+
+    arr_2d = [[0 for j in range(cols)] for i in range(rows)]
+
+    # Iterate over the elements of the 1D array and assign them to the 2D array
+    for i in range(rows):
+        for j in range(cols):
+            arr_2d[i][j] = matrix[i * cols + j]
+
+    # Print the resulting 2D array
+    return arr_2d
+
+
 def inverseOfMatrix(matrix: np.array) -> list:
     """
     Inverse of Matrix
     """
-    return inv(matrix)
+
+    inversedMatrix = []
+
+    # Calculating the determinant of matrix
+    det_A = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
+
+    # Check if matrix is invertible
+    if det_A == 0:
+        print("Error: The matrix matrix is not invertible.")
+        ArithmeticError(f'This matrix of shape {np.shape(matrix)} is not an invertible matrix')
+    else:
+        # Calculate the inverse of matrix
+        a_inverse = [[matrix[1][1] / det_A, -matrix[0][1] / det_A], [-matrix[1][0] / det_A, matrix[0][0] / det_A]]
+        print("Inverse")
+        for row in a_inverse:
+            inversedMatrix.append(row)
+    return inversedMatrix
 
 
 matrix = np.array([15, -9, -23, 33, 11])
